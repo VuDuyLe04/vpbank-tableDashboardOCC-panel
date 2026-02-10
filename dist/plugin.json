@@ -1,0 +1,28 @@
+{
+    "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+    "type": "panel",
+    "name": "Quannv3",
+    "id": "vpbank-quannv3-panel",
+    "info": {
+        "keywords": [
+            "panel"
+        ],
+        "description": "",
+        "author": {
+            "name": "VPBank"
+        },
+        "logos": {
+            "small": "img/logo.svg",
+            "large": "img/logo.svg"
+        },
+        "links": [],
+        "screenshots": [],
+        "version": "1.0.0",
+        "updated": "2026-02-10"
+    },
+    "dependencies": {
+        "grafanaDependency": ">=11.6.0",
+        "plugins": []
+    },
+    "buildMode": "development"
+}
