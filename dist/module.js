@@ -1,213 +1,111 @@
 /* [create-plugin] version: 6.8.4 */
-          /* [create-plugin] plugin: vpbank-quannv3-panel@1.0.0 */
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
-define(["@emotion/css","@grafana/data","@grafana/runtime","@grafana/ui","module","react"], (__WEBPACK_EXTERNAL_MODULE__emotion_css__, __WEBPACK_EXTERNAL_MODULE__grafana_data__, __WEBPACK_EXTERNAL_MODULE__grafana_runtime__, __WEBPACK_EXTERNAL_MODULE__grafana_ui__, __WEBPACK_EXTERNAL_MODULE_amd_module__, __WEBPACK_EXTERNAL_MODULE_react__) => { return /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
+/* [create-plugin] plugin: vpbank-quannv3-panel@1.0.0 */
+define(["@emotion/css","@grafana/data","@grafana/runtime","@grafana/ui","module","react"],(e,t,r,a,n,o)=>(()=>{"use strict";var i={89(t){t.exports=e},781(e){e.exports=t},531(e){e.exports=r},7(e){e.exports=a},308(e){e.exports=n},959(e){e.exports=o}},s={};function l(e){var t=s[e];if(void 0!==t)return t.exports;var r=s[e]={exports:{}};return i[e](r,r.exports,l),r.exports}l.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return l.d(t,{a:t}),t},l.d=(e,t)=>{for(var r in t)l.o(t,r)&&!l.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},l.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),l.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.p="public/plugins/vpbank-quannv3-panel/";var c={};l.r(c),l.d(c,{plugin:()=>w});var d=l(308),p=l.n(d);l.p=p()&&p().uri?p().uri.slice(0,p().uri.lastIndexOf("/")+1):"public/plugins/vpbank-quannv3-panel/";var u=l(781),m=l(959),g=l.n(m),f=l(89),b=l(7);const h=e=>{const t="#0099FF",r="2px",a=t,n=f.keyframes`
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    `;return{wrapper:f.css`
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            font-family: "Open Sans", Helvetica, Arial, sans-serif;
+            /* Đồng bộ background với các panel khác */
+            background: ${e.colors.background||"#0f1113"};
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            /* Responsive: bảng sẽ tự co giãn, không căn giữa */
+            justify-content: flex-start;
+            align-items: stretch;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.02);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+        `,table:f.css`
+            min-width: 350px;
+            flex: 1 1 0;
+            border-collapse: separate;
+            border-spacing: 10px;
+            color: ${e.colors.text.primary};
+            /* Use transparent table so wrapper background is continuous */
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+        `,thGroup:f.css`
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: ${t};
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(0, 153, 255, 0.4);
+        `,th:f.css`
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            color: ${e.colors.text.secondary};
+        `,tdLabel:f.css`
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            color: ${t};
+            font-size: 15px;
+            border: none;
+            border-bottom: 1px solid rgba(0, 153, 255, 0.1);
+            width: 150px; /* Reduced width as requested */
+            min-width: 120px;
+            
+            animation: ${n} 0.5s ease-out both;
+        `,tdNum:f.css`
+            position: relative;
+            padding: 15px;
+            text-align: center;
+            color: ${e.colors.text.primary};
+            font-size: 18px;
+            font-weight: bold;
+            background-color: ${"rgba(0, 153, 255, 0.05)"};
+            
+            /* Text Glow */
+            text-shadow: 0 0 5px ${t};
 
-/***/ "./module.ts"
-/*!*******************!*\
-  !*** ./module.ts ***!
-  \*******************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+            /* The Corner Brackets */
+            background-image: 
+                linear-gradient(to right, ${a} ${r}, transparent ${r}),
+                linear-gradient(to bottom, ${a} ${r}, transparent ${r}),
+                linear-gradient(to left, ${a} ${r}, transparent ${r}),
+                linear-gradient(to bottom, ${a} ${r}, transparent ${r}),
+                linear-gradient(to right, ${a} ${r}, transparent ${r}),
+                linear-gradient(to top, ${a} ${r}, transparent ${r}),
+                linear-gradient(to left, ${a} ${r}, transparent ${r}),
+                linear-gradient(to top, ${a} ${r}, transparent ${r});
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   plugin: () => (/* binding */ plugin)\n/* harmony export */ });\n/* harmony import */ var grafana_public_path__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grafana-public-path */ \"./node_modules/grafana-public-path.js\");\n/* harmony import */ var _grafana_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @grafana/data */ \"@grafana/data\");\n/* harmony import */ var _grafana_data__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_grafana_data__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_SimplePanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SimplePanel */ \"./components/SimplePanel.tsx\");\n/*** IMPORTS FROM imports-loader ***/\n\n\n\n\nconst plugin = new _grafana_data__WEBPACK_IMPORTED_MODULE_1__.PanelPlugin(_components_SimplePanel__WEBPACK_IMPORTED_MODULE_2__.SimplePanel).useFieldConfig({\n    disableStandardOptions: Object.values(_grafana_data__WEBPACK_IMPORTED_MODULE_1__.FieldConfigProperty).filter((v)=>v !== _grafana_data__WEBPACK_IMPORTED_MODULE_1__.FieldConfigProperty.Links)\n}).setPanelOptions((builder, context)=>{});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9tb2R1bGUudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBaUU7QUFDVjtBQUdoRCxNQUFNRyxTQUFTLElBQUlGLHNEQUFXQSxDQUFrQkMsZ0VBQVdBLEVBQy9ERSxjQUFjLENBQUM7SUFDZEMsd0JBQXdCQyxPQUFPQyxNQUFNLENBQUNQLDhEQUFtQkEsRUFBRVEsTUFBTSxDQUFDLENBQUNDLElBQU1BLE1BQU1ULDhEQUFtQkEsQ0FBQ1UsS0FBSztBQUMxRyxHQUNDQyxlQUFlLENBQUMsQ0FBQ0MsU0FBU0MsV0FDM0IsR0FBRyIsInNvdXJjZXMiOlsid2VicGFjazovL3ZwYmFuay1xdWFubnYzLXBhbmVsLy4vbW9kdWxlLnRzP2MyMTQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgRmllbGRDb25maWdQcm9wZXJ0eSwgUGFuZWxQbHVnaW4gfSBmcm9tICdAZ3JhZmFuYS9kYXRhJztcbmltcG9ydCB7IFNpbXBsZVBhbmVsIH0gZnJvbSAnLi9jb21wb25lbnRzL1NpbXBsZVBhbmVsJztcbmltcG9ydCB7IE9wdGlvbnMgYXMgVG9wb2xvZ3lPcHRpb25zIH0gZnJvbSAnLi9jb25maWcvcGFuZWxDZmcnO1xuXG5leHBvcnQgY29uc3QgcGx1Z2luID0gbmV3IFBhbmVsUGx1Z2luPFRvcG9sb2d5T3B0aW9ucz4oU2ltcGxlUGFuZWwpXG4gIC51c2VGaWVsZENvbmZpZyh7XG4gICAgZGlzYWJsZVN0YW5kYXJkT3B0aW9uczogT2JqZWN0LnZhbHVlcyhGaWVsZENvbmZpZ1Byb3BlcnR5KS5maWx0ZXIoKHYpID0+IHYgIT09IEZpZWxkQ29uZmlnUHJvcGVydHkuTGlua3MpLFxuICB9KVxuICAuc2V0UGFuZWxPcHRpb25zKChidWlsZGVyLCBjb250ZXh0KSA9PiB7XG4gIH0pO1xuIl0sIm5hbWVzIjpbIkZpZWxkQ29uZmlnUHJvcGVydHkiLCJQYW5lbFBsdWdpbiIsIlNpbXBsZVBhbmVsIiwicGx1Z2luIiwidXNlRmllbGRDb25maWciLCJkaXNhYmxlU3RhbmRhcmRPcHRpb25zIiwiT2JqZWN0IiwidmFsdWVzIiwiZmlsdGVyIiwidiIsIkxpbmtzIiwic2V0UGFuZWxPcHRpb25zIiwiYnVpbGRlciIsImNvbnRleHQiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./module.ts\n\n}");
+            background-position: 
+                0 0, 0 0, /* Top Left */
+                100% 0, 100% 0, /* Top Right */
+                0 100%, 0 100%, /* Bottom Left */
+                100% 100%; /* Bottom Right */
 
-/***/ },
-
-/***/ "./components/MainPanel.tsx"
-/*!**********************************!*\
-  !*** ./components/MainPanel.tsx ***!
-  \**********************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   MainPanel: () => (/* binding */ MainPanel)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/css */ \"@emotion/css\");\n/* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _grafana_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @grafana/ui */ \"@grafana/ui\");\n/* harmony import */ var _grafana_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_grafana_ui__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nconst getStyles = (theme)=>{\n    const highlightColor = '#0099FF';\n    const cellBg = 'rgba(0, 153, 255, 0.05)';\n    // Corner bracket implementation using gradients\n    const bracketSize = '8px';\n    const bracketThickness = '2px';\n    const bracketColor = highlightColor;\n    const fadeIn = (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.keyframes)`\r\n        from { opacity: 0; transform: translateY(10px); }\r\n        to { opacity: 1; transform: translateY(0); }\r\n    `;\n    return {\n        wrapper: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\r\n            width: 100%;\r\n            height: 100%;\r\n            overflow: auto;\r\n            font-family: \"Open Sans\", Helvetica, Arial, sans-serif;\r\n            background: transparent;\r\n        `,\n        table: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\r\n            width: 100%;\r\n            border-collapse: separate;\r\n            border-spacing: 10px; /* Space between cells for the bracket effect */\r\n            color: ${theme.colors.text.primary};\r\n        `,\n        thGroup: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\r\n            text-align: center;\r\n            padding: 10px;\r\n            font-weight: bold;\r\n            font-size: 16px;\r\n            color: ${highlightColor};\r\n            text-transform: uppercase;\r\n            letter-spacing: 1px;\r\n            text-shadow: 0 0 8px rgba(0, 153, 255, 0.4);\r\n        `,\n        th: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\r\n            text-align: center;\r\n            padding: 10px;\r\n            font-weight: bold;\r\n            font-size: 14px;\r\n            color: ${theme.colors.text.secondary};\r\n        `,\n        // Label cell: no brackets, just aligned text\n        tdLabel: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\r\n            padding: 15px;\r\n            text-align: left;\r\n            font-weight: bold;\r\n            color: ${highlightColor};\r\n            font-size: 15px;\r\n            border: none;\r\n            border-bottom: 1px solid rgba(0, 153, 255, 0.1);\r\n            width: 150px; /* Reduced width as requested */\r\n            min-width: 120px;\r\n            \r\n            animation: ${fadeIn} 0.5s ease-out both;\r\n        `,\n        // Number cell: futuristic brackets + glow + animation\n        tdNum: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\r\n            position: relative;\r\n            padding: 15px;\r\n            text-align: center;\r\n            color: ${theme.colors.text.primary};\r\n            font-size: 18px;\r\n            font-weight: bold;\r\n            background-color: ${cellBg};\r\n            \r\n            /* Text Glow */\r\n            text-shadow: 0 0 5px ${highlightColor};\r\n\r\n            /* The Corner Brackets */\r\n            background-image: \r\n                linear-gradient(to right, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness}),\r\n                linear-gradient(to bottom, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness}),\r\n                linear-gradient(to left, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness}),\r\n                linear-gradient(to bottom, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness}),\r\n                linear-gradient(to right, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness}),\r\n                linear-gradient(to top, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness}),\r\n                linear-gradient(to left, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness}),\r\n                linear-gradient(to top, ${bracketColor} ${bracketThickness}, transparent ${bracketThickness});\r\n\r\n            background-position: \r\n                0 0, 0 0, /* Top Left */\r\n                100% 0, 100% 0, /* Top Right */\r\n                0 100%, 0 100%, /* Bottom Left */\r\n                100% 100%; /* Bottom Right */\r\n\r\n            background-repeat: no-repeat;\r\n            background-size: ${bracketSize} ${bracketSize};\r\n            \r\n            font-family: 'Roboto Mono', monospace;\r\n            \r\n            animation: ${fadeIn} 0.5s ease-out both;\r\n            /* Stagger animation slightly for columns if desired, but keeping it simple for now */\r\n        `\n    };\n};\nconst MainPanel = ({ rows })=>{\n    const styles = (0,_grafana_ui__WEBPACK_IMPORTED_MODULE_2__.useStyles2)(getStyles);\n    if (!rows || rows.length === 0) {\n        return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", null, \"No data\");\n    }\n    return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n        className: styles.wrapper\n    }, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"table\", {\n        className: styles.table\n    }, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"thead\", null, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tr\", null, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.th,\n        style: {\n            width: '150px'\n        }\n    }), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.thGroup,\n        colSpan: 2\n    }, \"Disbursement\"), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.thGroup,\n        colSpan: 2\n    }, \"Collection\")), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tr\", null, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.th\n    }), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.th\n    }, \"Total\"), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.th\n    }, \"10m\"), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.th\n    }, \"Total\"), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n        className: styles.th\n    }, \"10m\"))), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tbody\", null, rows.map((row, index)=>/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tr\", {\n            key: index\n        }, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", {\n            className: styles.tdLabel,\n            style: {\n                animationDelay: `${index * 0.1}s`\n            }\n        }, row.label), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", {\n            className: styles.tdNum,\n            style: {\n                animationDelay: `${index * 0.1 + 0.1}s`\n            }\n        }, row.disbursementTotal), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", {\n            className: styles.tdNum,\n            style: {\n                animationDelay: `${index * 0.1 + 0.2}s`\n            }\n        }, row.disbursementIn10m), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", {\n            className: styles.tdNum,\n            style: {\n                animationDelay: `${index * 0.1 + 0.3}s`\n            }\n        }, row.collectionTotal), /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", {\n            className: styles.tdNum,\n            style: {\n                animationDelay: `${index * 0.1 + 0.4}s`\n            }\n        }, row.collectionIn10m))))));\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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O1FBQUdTLFdBQVdILE9BQU9OLEVBQUU7T0FBRSxzQkFDMUIsMkRBQUNBO1FBQUdTLFdBQVdILE9BQU9OLEVBQUU7T0FBRSx3QkFDMUIsMkRBQUNBO1FBQUdTLFdBQVdILE9BQU9OLEVBQUU7T0FBRSx3QkFHbEMsMkRBQUNlLGVBQ0lWLEtBQUtXLEdBQUcsQ0FBQyxDQUFDQyxLQUFLQyxzQkFDWiwyREFBQ1A7WUFBR1EsS0FBS0Q7eUJBQ0wsMkRBQUNFO1lBQUdYLFdBQVdILE9BQU9KLE9BQU87WUFBRVUsT0FBTztnQkFBRVMsZ0JBQWdCLEdBQUdILFFBQVEsSUFBSSxDQUFDLENBQUM7WUFBQztXQUFJRCxJQUFJSyxLQUFLLGlCQUN2RiwyREFBQ0Y7WUFBR1gsV0FBV0gsT0FBT0gsS0FBSztZQUFFUyxPQUFPO2dCQUFFUyxnQkFBZ0IsR0FBR0gsUUFBUSxNQUFNLElBQUksQ0FBQyxDQUFDO1lBQUM7V0FBSUQsSUFBSU0saUJBQWlCLGlCQUN2RywyREFBQ0g7WUFBR1gsV0FBV0gsT0FBT0gsS0FBSztZQUFFUyxPQUFPO2dCQUFFUyxnQkFBZ0IsR0FBR0gsUUFBUSxNQUFNLElBQUksQ0FBQyxDQUFDO1lBQUM7V0FBSUQsSUFBSU8saUJBQWlCLGlCQUN2RywyREFBQ0o7WUFBR1gsV0FBV0gsT0FBT0gsS0FBSztZQUFFUyxPQUFPO2dCQUFFUyxnQkFBZ0IsR0FBR0gsUUFBUSxNQUFNLElBQUksQ0FBQyxDQUFDO1lBQUM7V0FBSUQsSUFBSVEsZUFBZSxpQkFDckcsMkRBQUNMO1lBQUdYLFdBQVdILE9BQU9ILEtBQUs7WUFBRVMsT0FBTztnQkFBRVMsZ0JBQWdCLEdBQUdILFFBQVEsTUFBTSxJQUFJLENBQUMsQ0FBQztZQUFDO1dBQUlELElBQUlTLGVBQWU7QUFPakksRUFBRSIsInNvdXJjZXMiOlsid2VicGFjazovL3ZwYmFuay1xdWFubnYzLXBhbmVsLy4vY29tcG9uZW50cy9NYWluUGFuZWwudHN4PzNhYzAiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcclxuaW1wb3J0IHsgY3NzLCBrZXlmcmFtZXMgfSBmcm9tICdAZW1vdGlvbi9jc3MnO1xyXG5pbXBvcnQgeyB1c2VTdHlsZXMyIH0gZnJvbSAnQGdyYWZhbmEvdWknO1xyXG5cclxuaW50ZXJmYWNlIFByb3BzIHtcclxuICAgIHJvd3M6IGFueVtdO1xyXG59XHJcblxyXG5jb25zdCBnZXRTdHlsZXMgPSAodGhlbWU6IGFueSkgPT4ge1xyXG4gICAgY29uc3QgaGlnaGxpZ2h0Q29sb3IgPSAnIzAwOTlGRic7XHJcbiAgICBjb25zdCBjZWxsQmcgPSAncmdiYSgwLCAxNTMsIDI1NSwgMC4wNSknO1xyXG5cclxuICAgIC8vIENvcm5lciBicmFja2V0IGltcGxlbWVudGF0aW9uIHVzaW5nIGdyYWRpZW50c1xyXG4gICAgY29uc3QgYnJhY2tldFNpemUgPSAnOHB4JztcclxuICAgIGNvbnN0IGJyYWNrZXRUaGlja25lc3MgPSAnMnB4JztcclxuICAgIGNvbnN0IGJyYWNrZXRDb2xvciA9IGhpZ2hsaWdodENvbG9yO1xyXG5cclxuICAgIGNvbnN0IGZhZGVJbiA9IGtleWZyYW1lc2BcclxuICAgICAgICBmcm9tIHsgb3BhY2l0eTogMDsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDEwcHgpOyB9XHJcbiAgICAgICAgdG8geyBvcGFjaXR5OiAxOyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMCk7IH1cclxuICAgIGA7XHJcblxyXG4gICAgcmV0dXJuIHtcclxuICAgICAgICB3cmFwcGVyOiBjc3NgXHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIG92ZXJmbG93OiBhdXRvO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogXCJPcGVuIFNhbnNcIiwgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjtcclxuICAgICAgICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbiAgICAgICAgYCxcclxuICAgICAgICB0YWJsZTogY3NzYFxyXG4gICAgICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICAgICAgYm9yZGVyLWNvbGxhcHNlOiBzZXBhcmF0ZTtcclxuICAgICAgICAgICAgYm9yZGVyLXNwYWNpbmc6IDEwcHg7IC8qIFNwYWNlIGJldHdlZW4gY2VsbHMgZm9yIHRoZSBicmFja2V0IGVmZmVjdCAqL1xyXG4gICAgICAgICAgICBjb2xvcjogJHt0aGVtZS5jb2xvcnMudGV4dC5wcmltYXJ5fTtcclxuICAgICAgICBgLFxyXG4gICAgICAgIHRoR3JvdXA6IGNzc2BcclxuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgICAgICBjb2xvcjogJHtoaWdobGlnaHRDb2xvcn07XHJcbiAgICAgICAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICAgICAgICAgIGxldHRlci1zcGFjaW5nOiAxcHg7XHJcbiAgICAgICAgICAgIHRleHQtc2hhZG93OiAwIDAgOHB4IHJnYmEoMCwgMTUzLCAyNTUsIDAuNCk7XHJcbiAgICAgICAgYCxcclxuICAgICAgICB0aDogY3NzYFxyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgICAgIGNvbG9yOiAke3RoZW1lLmNvbG9ycy50ZXh0LnNlY29uZGFyeX07XHJcbiAgICAgICAgYCxcclxuICAgICAgICAvLyBMYWJlbCBjZWxsOiBubyBicmFja2V0cywganVzdCBhbGlnbmVkIHRleHRcclxuICAgICAgICB0ZExhYmVsOiBjc3NgXHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDE1cHg7XHJcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgICAgICBjb2xvcjogJHtoaWdobGlnaHRDb2xvcn07XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgICAgICAgICAgYm9yZGVyOiBub25lO1xyXG4gICAgICAgICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgcmdiYSgwLCAxNTMsIDI1NSwgMC4xKTtcclxuICAgICAgICAgICAgd2lkdGg6IDE1MHB4OyAvKiBSZWR1Y2VkIHdpZHRoIGFzIHJlcXVlc3RlZCAqL1xyXG4gICAgICAgICAgICBtaW4td2lkdGg6IDEyMHB4O1xyXG4gICAgICAgICAgICBcclxuICAgICAgICAgICAgYW5pbWF0aW9uOiAke2ZhZGVJbn0gMC41cyBlYXNlLW91dCBib3RoO1xyXG4gICAgICAgIGAsXHJcbiAgICAgICAgLy8gTnVtYmVyIGNlbGw6IGZ1dHVyaXN0aWMgYnJhY2tldHMgKyBnbG93ICsgYW5pbWF0aW9uXHJcbiAgICAgICAgdGROdW06IGNzc2BcclxuICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAxNXB4O1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgICAgIGNvbG9yOiAke3RoZW1lLmNvbG9ycy50ZXh0LnByaW1hcnl9O1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAke2NlbGxCZ307XHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAvKiBUZXh0IEdsb3cgKi9cclxuICAgICAgICAgICAgdGV4dC1zaGFkb3c6IDAgMCA1cHggJHtoaWdobGlnaHRDb2xvcn07XHJcblxyXG4gICAgICAgICAgICAvKiBUaGUgQ29ybmVyIEJyYWNrZXRzICovXHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IFxyXG4gICAgICAgICAgICAgICAgbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCAke2JyYWNrZXRDb2xvcn0gJHticmFja2V0VGhpY2tuZXNzfSwgdHJhbnNwYXJlbnQgJHticmFja2V0VGhpY2tuZXNzfSksXHJcbiAgICAgICAgICAgICAgICBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tLCAke2JyYWNrZXRDb2xvcn0gJHticmFja2V0VGhpY2tuZXNzfSwgdHJhbnNwYXJlbnQgJHticmFja2V0VGhpY2tuZXNzfSksXHJcbiAgICAgICAgICAgICAgICBsaW5lYXItZ3JhZGllbnQodG8gbGVmdCwgJHticmFja2V0Q29sb3J9ICR7YnJhY2tldFRoaWNrbmVzc30sIHRyYW5zcGFyZW50ICR7YnJhY2tldFRoaWNrbmVzc30pLFxyXG4gICAgICAgICAgICAgICAgbGluZWFyLWdyYWRpZW50KHRvIGJvdHRvbSwgJHticmFja2V0Q29sb3J9ICR7YnJhY2tldFRoaWNrbmVzc30sIHRyYW5zcGFyZW50ICR7YnJhY2tldFRoaWNrbmVzc30pLFxyXG4gICAgICAgICAgICAgICAgbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCAke2JyYWNrZXRDb2xvcn0gJHticmFja2V0VGhpY2tuZXNzfSwgdHJhbnNwYXJlbnQgJHticmFja2V0VGhpY2tuZXNzfSksXHJcbiAgICAgICAgICAgICAgICBsaW5lYXItZ3JhZGllbnQodG8gdG9wLCAke2JyYWNrZXRDb2xvcn0gJHticmFja2V0VGhpY2tuZXNzfSwgdHJhbnNwYXJlbnQgJHticmFja2V0VGhpY2tuZXNzfSksXHJcbiAgICAgICAgICAgICAgICBsaW5lYXItZ3JhZGllbnQodG8gbGVmdCwgJHticmFja2V0Q29sb3J9ICR7YnJhY2tldFRoaWNrbmVzc30sIHRyYW5zcGFyZW50ICR7YnJhY2tldFRoaWNrbmVzc30pLFxyXG4gICAgICAgICAgICAgICAgbGluZWFyLWdyYWRpZW50KHRvIHRvcCwgJHticmFja2V0Q29sb3J9ICR7YnJhY2tldFRoaWNrbmVzc30sIHRyYW5zcGFyZW50ICR7YnJhY2tldFRoaWNrbmVzc30pO1xyXG5cclxuICAgICAgICAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogXHJcbiAgICAgICAgICAgICAgICAwIDAsIDAgMCwgLyogVG9wIExlZnQgKi9cclxuICAgICAgICAgICAgICAgIDEwMCUgMCwgMTAwJSAwLCAvKiBUb3AgUmlnaHQgKi9cclxuICAgICAgICAgICAgICAgIDAgMTAwJSwgMCAxMDAlLCAvKiBCb3R0b20gTGVmdCAqL1xyXG4gICAgICAgICAgICAgICAgMTAwJSAxMDAlOyAvKiBCb3R0b20gUmlnaHQgKi9cclxuXHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtc2l6ZTogJHticmFja2V0U2l6ZX0gJHticmFja2V0U2l6ZX07XHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ1JvYm90byBNb25vJywgbW9ub3NwYWNlO1xyXG4gICAgICAgICAgICBcclxuICAgICAgICAgICAgYW5pbWF0aW9uOiAke2ZhZGVJbn0gMC41cyBlYXNlLW91dCBib3RoO1xyXG4gICAgICAgICAgICAvKiBTdGFnZ2VyIGFuaW1hdGlvbiBzbGlnaHRseSBmb3IgY29sdW1ucyBpZiBkZXNpcmVkLCBidXQga2VlcGluZyBpdCBzaW1wbGUgZm9yIG5vdyAqL1xyXG4gICAgICAgIGBcclxuICAgIH07XHJcbn07XHJcblxyXG5leHBvcnQgY29uc3QgTWFpblBhbmVsOiBSZWFjdC5GQzxQcm9wcz4gPSAoeyByb3dzIH0pID0+IHtcclxuICAgIGNvbnN0IHN0eWxlcyA9IHVzZVN0eWxlczIoZ2V0U3R5bGVzKTtcclxuXHJcbiAgICBpZiAoIXJvd3MgfHwgcm93cy5sZW5ndGggPT09IDApIHtcclxuICAgICAgICByZXR1cm4gPGRpdj5ObyBkYXRhPC9kaXY+O1xyXG4gICAgfVxyXG5cclxuICAgIHJldHVybiAoXHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9e3N0eWxlcy53cmFwcGVyfT5cclxuICAgICAgICAgICAgPHRhYmxlIGNsYXNzTmFtZT17c3R5bGVzLnRhYmxlfT5cclxuICAgICAgICAgICAgICAgIDx0aGVhZD5cclxuICAgICAgICAgICAgICAgICAgICA8dHI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDx0aCBjbGFzc05hbWU9e3N0eWxlcy50aH0gc3R5bGU9e3sgd2lkdGg6ICcxNTBweCcgfX0+PC90aD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT17c3R5bGVzLnRoR3JvdXB9IGNvbFNwYW49ezJ9PkRpc2J1cnNlbWVudDwvdGg+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDx0aCBjbGFzc05hbWU9e3N0eWxlcy50aEdyb3VwfSBjb2xTcGFuPXsyfT5Db2xsZWN0aW9uPC90aD5cclxuICAgICAgICAgICAgICAgICAgICA8L3RyPlxyXG4gICAgICAgICAgICAgICAgICAgIDx0cj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT17c3R5bGVzLnRofT48L3RoPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPXtzdHlsZXMudGh9PlRvdGFsPC90aD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT17c3R5bGVzLnRofT4xMG08L3RoPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPXtzdHlsZXMudGh9PlRvdGFsPC90aD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT17c3R5bGVzLnRofT4xMG08L3RoPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvdHI+XHJcbiAgICAgICAgICAgICAgICA8L3RoZWFkPlxyXG4gICAgICAgICAgICAgICAgPHRib2R5PlxyXG4gICAgICAgICAgICAgICAgICAgIHtyb3dzLm1hcCgocm93LCBpbmRleCkgPT4gKFxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8dHIga2V5PXtpbmRleH0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPXtzdHlsZXMudGRMYWJlbH0gc3R5bGU9e3sgYW5pbWF0aW9uRGVsYXk6IGAke2luZGV4ICogMC4xfXNgIH19Pntyb3cubGFiZWx9PC90ZD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9e3N0eWxlcy50ZE51bX0gc3R5bGU9e3sgYW5pbWF0aW9uRGVsYXk6IGAke2luZGV4ICogMC4xICsgMC4xfXNgIH19Pntyb3cuZGlzYnVyc2VtZW50VG90YWx9PC90ZD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9e3N0eWxlcy50ZE51bX0gc3R5bGU9e3sgYW5pbWF0aW9uRGVsYXk6IGAke2luZGV4ICogMC4xICsgMC4yfXNgIH19Pntyb3cuZGlzYnVyc2VtZW50SW4xMG19PC90ZD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9e3N0eWxlcy50ZE51bX0gc3R5bGU9e3sgYW5pbWF0aW9uRGVsYXk6IGAke2luZGV4ICogMC4xICsgMC4zfXNgIH19Pntyb3cuY29sbGVjdGlvblRvdGFsfTwvdGQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPXtzdHlsZXMudGROdW19IHN0eWxlPXt7IGFuaW1hdGlvbkRlbGF5OiBgJHtpbmRleCAqIDAuMSArIDAuNH1zYCB9fT57cm93LmNvbGxlY3Rpb25JbjEwbX08L3RkPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3RyPlxyXG4gICAgICAgICAgICAgICAgICAgICkpfVxyXG4gICAgICAgICAgICAgICAgPC90Ym9keT5cclxuICAgICAgICAgICAgPC90YWJsZT5cclxuICAgICAgICA8L2Rpdj5cclxuICAgICk7XHJcbn07XHJcbiJdLCJuYW1lcyI6WyJSZWFjdCIsImNzcyIsImtleWZyYW1lcyIsInVzZVN0eWxlczIiLCJnZXRTdHlsZXMiLCJ0aGVtZSIsImhpZ2hsaWdodENvbG9yIiwiY2VsbEJnIiwiYnJhY2tldFNpemUiLCJicmFja2V0VGhpY2tuZXNzIiwiYnJhY2tldENvbG9yIiwiZmFkZUluIiwid3JhcHBlciIsInRhYmxlIiwiY29sb3JzIiwidGV4dCIsInByaW1hcnkiLCJ0aEdyb3VwIiwidGgiLCJzZWNvbmRhcnkiLCJ0ZExhYmVsIiwidGROdW0iLCJNYWluUGFuZWwiLCJyb3dzIiwic3R5bGVzIiwibGVuZ3RoIiwiZGl2IiwiY2xhc3NOYW1lIiwidGhlYWQiLCJ0ciIsInN0eWxlIiwid2lkdGgiLCJjb2xTcGFuIiwidGJvZHkiLCJtYXAiLCJyb3ciLCJpbmRleCIsImtleSIsInRkIiwiYW5pbWF0aW9uRGVsYXkiLCJsYWJlbCIsImRpc2J1cnNlbWVudFRvdGFsIiwiZGlzYnVyc2VtZW50SW4xMG0iLCJjb2xsZWN0aW9uVG90YWwiLCJjb2xsZWN0aW9uSW4xMG0iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/MainPanel.tsx\n\n}");
-
-/***/ },
-
-/***/ "./components/SimplePanel.tsx"
-/*!************************************!*\
-  !*** ./components/SimplePanel.tsx ***!
-  \************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   SimplePanel: () => (/* binding */ SimplePanel)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/css */ \"@emotion/css\");\n/* harmony import */ var _emotion_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _grafana_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @grafana/ui */ \"@grafana/ui\");\n/* harmony import */ var _grafana_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_grafana_ui__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _MainPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainPanel */ \"./components/MainPanel.tsx\");\n/* harmony import */ var _utils_dataUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/dataUtils */ \"./utils/dataUtils.ts\");\n/* harmony import */ var _grafana_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @grafana/runtime */ \"@grafana/runtime\");\n/* harmony import */ var _grafana_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_grafana_runtime__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\nconst getStyles = ()=>{\n    return {\n        wrapper: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\n      font-family: Open Sans;\n      position: relative;\n    `,\n        svg: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\n      position: absolute;\n      top: 0;\n      left: 0;\n    `,\n        textBox: (0,_emotion_css__WEBPACK_IMPORTED_MODULE_1__.css)`\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      padding: 10px;\n    `\n    };\n};\nconst SimplePanel = ({ options, data, width, height, fieldConfig, id })=>{\n    const styles = (0,_grafana_ui__WEBPACK_IMPORTED_MODULE_2__.useStyles2)(getStyles);\n    if (data.series.length === 0) {\n        return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_grafana_runtime__WEBPACK_IMPORTED_MODULE_5__.PanelDataErrorView, {\n            fieldConfig: fieldConfig,\n            panelId: id,\n            data: data,\n            needsStringField: true\n        });\n    }\n    const rows = (0,_utils_dataUtils__WEBPACK_IMPORTED_MODULE_4__.transformData)(data);\n    return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n        className: styles.wrapper\n    }, /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_MainPanel__WEBPACK_IMPORTED_MODULE_3__.MainPanel, {\n        rows: rows\n    }));\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL1NpbXBsZVBhbmVsLnRzeCIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUEwQjtBQUdTO0FBQ007QUFDRDtBQUNXO0FBQ0c7QUFJdEQsTUFBTU0sWUFBWTtJQUNoQixPQUFPO1FBQ0xDLFNBQVNOLGlEQUFHLENBQUM7OztJQUdiLENBQUM7UUFDRE8sS0FBS1AsaURBQUcsQ0FBQzs7OztJQUlULENBQUM7UUFDRFEsU0FBU1IsaURBQUcsQ0FBQzs7Ozs7SUFLYixDQUFDO0lBQ0g7QUFDRjtBQUVPLE1BQU1TLGNBQStCLENBQUMsRUFBRUMsT0FBTyxFQUFFQyxJQUFJLEVBQUVDLEtBQUssRUFBRUMsTUFBTSxFQUFFQyxXQUFXLEVBQUVDLEVBQUUsRUFBRTtJQUM1RixNQUFNQyxTQUFTZix1REFBVUEsQ0FBQ0k7SUFFMUIsSUFBSU0sS0FBS00sTUFBTSxDQUFDQyxNQUFNLEtBQUssR0FBRztRQUM1QixxQkFBTywyREFBQ2QsZ0VBQWtCQTtZQUFDVSxhQUFhQTtZQUFhSyxTQUFTSjtZQUFJSixNQUFNQTtZQUFNUyxrQkFBQUE7O0lBQ2hGO0lBRUEsTUFBTUMsT0FBT2xCLCtEQUFhQSxDQUFDUTtJQUUzQixxQkFDRSwyREFBQ1c7UUFBSUMsV0FBV1AsT0FBT1YsT0FBTztxQkFDNUIsMkRBQUNKLGlEQUFTQTtRQUFDbUIsTUFBTUE7O0FBR3ZCLEVBQUUiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly92cGJhbmstcXVhbm52My1wYW5lbC8uL2NvbXBvbmVudHMvU2ltcGxlUGFuZWwudHN4PzIyMWMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFBhbmVsUHJvcHMgfSBmcm9tICdAZ3JhZmFuYS9kYXRhJztcbmltcG9ydCB7IE9wdGlvbnMgYXMgVG9wb2xvZ3lPcHRpb25zIH0gZnJvbSAnLi4vY29uZmlnL3BhbmVsQ2ZnJztcbmltcG9ydCB7IGNzcyB9IGZyb20gJ0BlbW90aW9uL2Nzcyc7XG5pbXBvcnQgeyB1c2VTdHlsZXMyIH0gZnJvbSAnQGdyYWZhbmEvdWknO1xuaW1wb3J0IHsgTWFpblBhbmVsIH0gZnJvbSAnLi9NYWluUGFuZWwnO1xuaW1wb3J0IHsgdHJhbnNmb3JtRGF0YSB9IGZyb20gJy4uL3V0aWxzL2RhdGFVdGlscyc7XG5pbXBvcnQgeyBQYW5lbERhdGFFcnJvclZpZXcgfSBmcm9tICdAZ3JhZmFuYS9ydW50aW1lJztcblxuaW50ZXJmYWNlIFByb3BzIGV4dGVuZHMgUGFuZWxQcm9wczxUb3BvbG9neU9wdGlvbnM+IHsgfVxuXG5jb25zdCBnZXRTdHlsZXMgPSAoKSA9PiB7XG4gIHJldHVybiB7XG4gICAgd3JhcHBlcjogY3NzYFxuICAgICAgZm9udC1mYW1pbHk6IE9wZW4gU2FucztcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBgLFxuICAgIHN2ZzogY3NzYFxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgdG9wOiAwO1xuICAgICAgbGVmdDogMDtcbiAgICBgLFxuICAgIHRleHRCb3g6IGNzc2BcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMDtcbiAgICAgIGxlZnQ6IDA7XG4gICAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGAsXG4gIH07XG59O1xuXG5leHBvcnQgY29uc3QgU2ltcGxlUGFuZWw6IFJlYWN0LkZDPFByb3BzPiA9ICh7IG9wdGlvbnMsIGRhdGEsIHdpZHRoLCBoZWlnaHQsIGZpZWxkQ29uZmlnLCBpZCB9KSA9PiB7XG4gIGNvbnN0IHN0eWxlcyA9IHVzZVN0eWxlczIoZ2V0U3R5bGVzKTtcblxuICBpZiAoZGF0YS5zZXJpZXMubGVuZ3RoID09PSAwKSB7XG4gICAgcmV0dXJuIDxQYW5lbERhdGFFcnJvclZpZXcgZmllbGRDb25maWc9e2ZpZWxkQ29uZmlnfSBwYW5lbElkPXtpZH0gZGF0YT17ZGF0YX0gbmVlZHNTdHJpbmdGaWVsZCAvPjtcbiAgfVxuXG4gIGNvbnN0IHJvd3MgPSB0cmFuc2Zvcm1EYXRhKGRhdGEpO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9e3N0eWxlcy53cmFwcGVyfT5cbiAgICAgIDxNYWluUGFuZWwgcm93cz17cm93c30gLz5cbiAgICA8L2Rpdj5cbiAgKTtcbn07XG4iXSwibmFtZXMiOlsiUmVhY3QiLCJjc3MiLCJ1c2VTdHlsZXMyIiwiTWFpblBhbmVsIiwidHJhbnNmb3JtRGF0YSIsIlBhbmVsRGF0YUVycm9yVmlldyIsImdldFN0eWxlcyIsIndyYXBwZXIiLCJzdmciLCJ0ZXh0Qm94IiwiU2ltcGxlUGFuZWwiLCJvcHRpb25zIiwiZGF0YSIsIndpZHRoIiwiaGVpZ2h0IiwiZmllbGRDb25maWciLCJpZCIsInN0eWxlcyIsInNlcmllcyIsImxlbmd0aCIsInBhbmVsSWQiLCJuZWVkc1N0cmluZ0ZpZWxkIiwicm93cyIsImRpdiIsImNsYXNzTmFtZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/SimplePanel.tsx\n\n}");
-
-/***/ },
-
-/***/ "./utils/dataUtils.ts"
-/*!****************************!*\
-  !*** ./utils/dataUtils.ts ***!
-  \****************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   transformData: () => (/* binding */ transformData)\n/* harmony export */ });\nconst transformData = (data)=>{\n    if (!data.series.length) {\n        return [];\n    }\n    const frame = data.series[0];\n    const fieldNames = [\n        'label',\n        'disbursementTotal',\n        'disbursementIn10m',\n        'collectionTotal',\n        'collectionIn10m'\n    ];\n    const length = frame.length;\n    const rows = [];\n    for(let i = 0; i < length; i++){\n        const row = {};\n        // Default values if needed, or handle missing fields\n        row.id = ''; // RawPanelData has id, but we might not have it in fieldNames list above. \n        // The previous implementation ignored 'id'. I'll double check if 'id' is in the fields or just generated.\n        // For now, I'll initialize it or map it if present.\n        fieldNames.forEach((name)=>{\n            const field = frame.fields.find((f)=>f.name === name);\n            if (field) {\n                row[name] = field.values[i];\n            } else {\n                // Fallback for missing fields\n                row[name] = name === 'label' ? '-' : 0;\n            }\n        });\n        rows.push(row);\n    }\n    return rows;\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi91dGlscy9kYXRhVXRpbHMudHMiLCJtYXBwaW5ncyI6Ijs7OztBQUdPLE1BQU1BLGdCQUFnQixDQUFDQztJQUMxQixJQUFJLENBQUNBLEtBQUtDLE1BQU0sQ0FBQ0MsTUFBTSxFQUFFO1FBQ3JCLE9BQU8sRUFBRTtJQUNiO0lBRUEsTUFBTUMsUUFBUUgsS0FBS0MsTUFBTSxDQUFDLEVBQUU7SUFDNUIsTUFBTUcsYUFBd0M7UUFBQztRQUFTO1FBQXFCO1FBQXFCO1FBQW1CO0tBQWtCO0lBQ3ZJLE1BQU1GLFNBQVNDLE1BQU1ELE1BQU07SUFFM0IsTUFBTUcsT0FBdUIsRUFBRTtJQUUvQixJQUFLLElBQUlDLElBQUksR0FBR0EsSUFBSUosUUFBUUksSUFBSztRQUM3QixNQUFNQyxNQUFXLENBQUM7UUFDbEIscURBQXFEO1FBQ3JEQSxJQUFJQyxFQUFFLEdBQUcsSUFBSSwyRUFBMkU7UUFDeEYsMEdBQTBHO1FBQzFHLG9EQUFvRDtRQUVwREosV0FBV0ssT0FBTyxDQUFDQyxDQUFBQTtZQUNmLE1BQU1DLFFBQVFSLE1BQU1TLE1BQU0sQ0FBQ0MsSUFBSSxDQUFDQyxDQUFBQSxJQUFLQSxFQUFFSixJQUFJLEtBQUtBO1lBQ2hELElBQUlDLE9BQU87Z0JBQ1BKLEdBQUcsQ0FBQ0csS0FBSyxHQUFHQyxNQUFNSSxNQUFNLENBQUNULEVBQUU7WUFDL0IsT0FBTztnQkFDSCw4QkFBOEI7Z0JBQzlCQyxHQUFHLENBQUNHLEtBQUssR0FBR0EsU0FBUyxVQUFVLE1BQU07WUFDekM7UUFDSjtRQUNBTCxLQUFLVyxJQUFJLENBQUNUO0lBQ2Q7SUFFQSxPQUFPRjtBQUNYLEVBQUUiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly92cGJhbmstcXVhbm52My1wYW5lbC8uL3V0aWxzL2RhdGFVdGlscy50cz8xMWE2Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFBhbmVsRGF0YSB9IGZyb20gJ0BncmFmYW5hL2RhdGEnO1xyXG5pbXBvcnQgeyBSYXdQYW5lbERhdGEgfSBmcm9tICcuLi90eXBlcyc7XHJcblxyXG5leHBvcnQgY29uc3QgdHJhbnNmb3JtRGF0YSA9IChkYXRhOiBQYW5lbERhdGEpOiBSYXdQYW5lbERhdGFbXSA9PiB7XHJcbiAgICBpZiAoIWRhdGEuc2VyaWVzLmxlbmd0aCkge1xyXG4gICAgICAgIHJldHVybiBbXTtcclxuICAgIH1cclxuXHJcbiAgICBjb25zdCBmcmFtZSA9IGRhdGEuc2VyaWVzWzBdO1xyXG4gICAgY29uc3QgZmllbGROYW1lczogQXJyYXk8a2V5b2YgUmF3UGFuZWxEYXRhPiA9IFsnbGFiZWwnLCAnZGlzYnVyc2VtZW50VG90YWwnLCAnZGlzYnVyc2VtZW50SW4xMG0nLCAnY29sbGVjdGlvblRvdGFsJywgJ2NvbGxlY3Rpb25JbjEwbSddO1xyXG4gICAgY29uc3QgbGVuZ3RoID0gZnJhbWUubGVuZ3RoO1xyXG5cclxuICAgIGNvbnN0IHJvd3M6IFJhd1BhbmVsRGF0YVtdID0gW107XHJcblxyXG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCBsZW5ndGg7IGkrKykge1xyXG4gICAgICAgIGNvbnN0IHJvdzogYW55ID0ge307XHJcbiAgICAgICAgLy8gRGVmYXVsdCB2YWx1ZXMgaWYgbmVlZGVkLCBvciBoYW5kbGUgbWlzc2luZyBmaWVsZHNcclxuICAgICAgICByb3cuaWQgPSAnJzsgLy8gUmF3UGFuZWxEYXRhIGhhcyBpZCwgYnV0IHdlIG1pZ2h0IG5vdCBoYXZlIGl0IGluIGZpZWxkTmFtZXMgbGlzdCBhYm92ZS4gXHJcbiAgICAgICAgLy8gVGhlIHByZXZpb3VzIGltcGxlbWVudGF0aW9uIGlnbm9yZWQgJ2lkJy4gSSdsbCBkb3VibGUgY2hlY2sgaWYgJ2lkJyBpcyBpbiB0aGUgZmllbGRzIG9yIGp1c3QgZ2VuZXJhdGVkLlxyXG4gICAgICAgIC8vIEZvciBub3csIEknbGwgaW5pdGlhbGl6ZSBpdCBvciBtYXAgaXQgaWYgcHJlc2VudC5cclxuXHJcbiAgICAgICAgZmllbGROYW1lcy5mb3JFYWNoKG5hbWUgPT4ge1xyXG4gICAgICAgICAgICBjb25zdCBmaWVsZCA9IGZyYW1lLmZpZWxkcy5maW5kKGYgPT4gZi5uYW1lID09PSBuYW1lKTtcclxuICAgICAgICAgICAgaWYgKGZpZWxkKSB7XHJcbiAgICAgICAgICAgICAgICByb3dbbmFtZV0gPSBmaWVsZC52YWx1ZXNbaV07XHJcbiAgICAgICAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgICAgICAgICAvLyBGYWxsYmFjayBmb3IgbWlzc2luZyBmaWVsZHNcclxuICAgICAgICAgICAgICAgIHJvd1tuYW1lXSA9IG5hbWUgPT09ICdsYWJlbCcgPyAnLScgOiAwO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfSk7XHJcbiAgICAgICAgcm93cy5wdXNoKHJvdyBhcyBSYXdQYW5lbERhdGEpO1xyXG4gICAgfVxyXG5cclxuICAgIHJldHVybiByb3dzO1xyXG59O1xyXG4iXSwibmFtZXMiOlsidHJhbnNmb3JtRGF0YSIsImRhdGEiLCJzZXJpZXMiLCJsZW5ndGgiLCJmcmFtZSIsImZpZWxkTmFtZXMiLCJyb3dzIiwiaSIsInJvdyIsImlkIiwiZm9yRWFjaCIsIm5hbWUiLCJmaWVsZCIsImZpZWxkcyIsImZpbmQiLCJmIiwidmFsdWVzIiwicHVzaCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./utils/dataUtils.ts\n\n}");
-
-/***/ },
-
-/***/ "./node_modules/grafana-public-path.js"
-/*!*********************************************!*\
-  !*** ./node_modules/grafana-public-path.js ***!
-  \*********************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var amd_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! amd-module */ \"amd-module\");\n/* harmony import */ var amd_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(amd_module__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n__webpack_require__.p =\n  (amd_module__WEBPACK_IMPORTED_MODULE_0___default()) && (amd_module__WEBPACK_IMPORTED_MODULE_0___default().uri)\n    ? amd_module__WEBPACK_IMPORTED_MODULE_0___default().uri.slice(0, amd_module__WEBPACK_IMPORTED_MODULE_0___default().uri.lastIndexOf('/') + 1)\n    : 'public/plugins/vpbank-quannv3-panel/';\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9ub2RlX21vZHVsZXMvZ3JhZmFuYS1wdWJsaWMtcGF0aC5qcyIsIm1hcHBpbmdzIjoiOzs7O0FBQ3VDOztBQUV2QyxxQkFBdUI7QUFDdkIsRUFBRSxtREFBYSxJQUFJLHVEQUFpQjtBQUNwQyxNQUFNLHFEQUFpQixVQUFVLHFEQUFpQjtBQUNsRCIsInNvdXJjZXMiOlsid2VicGFjazovL3ZwYmFuay1xdWFubnYzLXBhbmVsLy4vbm9kZV9tb2R1bGVzL2dyYWZhbmEtcHVibGljLXBhdGguanM/OTNlMyJdLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCBhbWRNZXRhTW9kdWxlIGZyb20gJ2FtZC1tb2R1bGUnO1xuXG5fX3dlYnBhY2tfcHVibGljX3BhdGhfXyA9XG4gIGFtZE1ldGFNb2R1bGUgJiYgYW1kTWV0YU1vZHVsZS51cmlcbiAgICA/IGFtZE1ldGFNb2R1bGUudXJpLnNsaWNlKDAsIGFtZE1ldGFNb2R1bGUudXJpLmxhc3RJbmRleE9mKCcvJykgKyAxKVxuICAgIDogJ3B1YmxpYy9wbHVnaW5zL3ZwYmFuay1xdWFubnYzLXBhbmVsLyc7XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./node_modules/grafana-public-path.js\n\n}");
-
-/***/ },
-
-/***/ "@emotion/css"
-/*!*******************************!*\
-  !*** external "@emotion/css" ***!
-  \*******************************/
-(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__emotion_css__;
-
-/***/ },
-
-/***/ "@grafana/data"
-/*!********************************!*\
-  !*** external "@grafana/data" ***!
-  \********************************/
-(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__grafana_data__;
-
-/***/ },
-
-/***/ "@grafana/runtime"
-/*!***********************************!*\
-  !*** external "@grafana/runtime" ***!
-  \***********************************/
-(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__grafana_runtime__;
-
-/***/ },
-
-/***/ "@grafana/ui"
-/*!******************************!*\
-  !*** external "@grafana/ui" ***!
-  \******************************/
-(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__grafana_ui__;
-
-/***/ },
-
-/***/ "amd-module"
-/*!*************************!*\
-  !*** external "module" ***!
-  \*************************/
-(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_amd_module__;
-
-/***/ },
-
-/***/ "react"
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
-(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
-
-/***/ }
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Check if module exists (development only)
-/******/ 		if (__webpack_modules__[moduleId] === undefined) {
-/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
-/******/ 			e.code = 'MODULE_NOT_FOUND';
-/******/ 			throw e;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		__webpack_require__.p = "public/plugins/vpbank-quannv3-panel/";
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./module.ts");
-/******/ 	
-/******/ 	return __webpack_exports__;
-/******/ })()
-;
-});;
+            background-repeat: no-repeat;
+            background-size: ${"8px"} ${"8px"};
+            
+            font-family: 'Roboto Mono', monospace;
+            
+            animation: ${n} 0.5s ease-out both;
+            /* Stagger animation slightly for columns if desired, but keeping it simple for now */
+        `}};const x=({disbursementData:e,collectionData:t})=>{const r=(0,b.useStyles2)(h),a=[];for(let t=1;t<=4;t++){let r="";for(const a of e){const e=a[`disMetric${t}`],n=a[`nameDisMetric${t}`];if(void 0!==e){r=void 0!==n?String(n):`Metric ${t}`;break}}r&&a.push(r)}const n=[];for(let e=1;e<=4;e++){let r="";for(const a of t){const t=a[`colMetric${e}`],n=a[`nameColMetric${e}`];if(void 0!==t){r=void 0!==n?String(n):`Metric ${e}`;break}}r&&n.push(r)}return e&&0!==e.length||t&&0!==t.length?g().createElement("div",{className:r.wrapper},g().createElement("table",{className:r.table},g().createElement("thead",null,g().createElement("tr",null,g().createElement("th",{className:r.th,style:{width:"150px"}}),g().createElement("th",{className:r.thGroup,colSpan:a.length},"CHI HỘ")),g().createElement("tr",null,g().createElement("th",{className:r.th}),a.map((e,t)=>g().createElement("th",{className:r.th,key:t},e)))),g().createElement("tbody",null,e.map((e,t)=>{const a=function(e){const t=[];for(let r=1;r<=4;r++){const a=e[`disMetric${r}`],n=e[`nameDisMetric${r}`];void 0!==a&&t.push({value:a,name:n||`Metric ${r}`})}return t}(e);return g().createElement("tr",{key:e.id||t},g().createElement("td",{className:r.tdLabel,style:{animationDelay:.1*t+"s"}},e.label),a.map((e,a)=>g().createElement("td",{className:r.tdNum,key:a,style:{animationDelay:.1*t+.1*(a+1)+"s"}},e.value)))}))),g().createElement("table",{className:r.table},g().createElement("thead",null,g().createElement("tr",null,g().createElement("th",{className:r.th,style:{width:"150px"}}),g().createElement("th",{className:r.thGroup,colSpan:n.length},"THU HỘ")),g().createElement("tr",null,g().createElement("th",{className:r.th}),n.map((e,t)=>g().createElement("th",{className:r.th,key:t},e)))),g().createElement("tbody",null,t.map((e,t)=>{const a=function(e){const t=[];for(let r=1;r<=4;r++){const a=e[`colMetric${r}`],n=e[`nameColMetric${r}`];void 0!==a&&t.push({value:a,name:n||`Metric ${r}`})}return t}(e);return g().createElement("tr",{key:e.id||t},g().createElement("td",{className:r.tdLabel,style:{animationDelay:.1*t+"s"}},e.label),a.map((e,a)=>g().createElement("td",{className:r.tdNum,key:a,style:{animationDelay:.1*t+.1*(a+1)+"s"}},e.value)))})))):g().createElement("div",null,"No data")};function $(e,t){return e.fields.find(e=>e.name.toLowerCase().startsWith(t.toLowerCase()))}const v=e=>{if(null!=e){if("number"==typeof e)return e;if("string"==typeof e){const t=e.replace(/[^0-9.-]/g,""),r=parseFloat(t);return isNaN(r)?void 0:r}}},y=e=>{if(null==e)return;const t=String(e).trim();return""!==t&&"NULL"!==t.toUpperCase()?t:void 0};var M=l(531);const E=()=>({wrapper:f.css`
+      font-family: Open Sans;
+      position: relative;
+    `,svg:f.css`
+      position: absolute;
+      top: 0;
+      left: 0;
+    `,textBox:f.css`
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 10px;
+    `}),w=new u.PanelPlugin(({options:e,data:t,width:r,height:a,fieldConfig:n,id:o})=>{const i=(0,b.useStyles2)(E);if(0===t.series.length)return g().createElement(M.PanelDataErrorView,{fieldConfig:n,panelId:o,data:t,needsStringField:!0});const s=(e=>{const t=[];return e.series&&0!==e.series.length?(e.series.forEach(e=>{const r=$(e,"id"),a=$(e,"label");if(r||a)for(let n=0;n<e.length;n++){const o={id:r?String(r.values[n]):`node-${n}`,label:a?String(a.values[n]):`Node ${n}`};for(let t=1;t<=4;t++){const r=$(e,`disMetric${t}`),a=$(e,`nameDisMetric${t}`);if(r){const e=v(r.values[n]);void 0!==e&&(1===t?o.disMetric1=e:2===t?o.disMetric2=e:3===t?o.disMetric3=e:4===t&&(o.disMetric4=e))}if(a){const e=y(a.values[n]);void 0!==e&&(1===t?o.nameDisMetric1=e:2===t?o.nameDisMetric2=e:3===t?o.nameDisMetric3=e:4===t&&(o.nameDisMetric4=e))}}t.push(o)}}),t):t})(t),l=(e=>{const t=[];return e.series&&0!==e.series.length?(e.series.forEach(e=>{const r=$(e,"id"),a=$(e,"label");if(r||a)for(let n=0;n<e.length;n++){const o={id:r?String(r.values[n]):`node-${n}`,label:a?String(a.values[n]):`Node ${n}`};for(let t=1;t<=4;t++){const r=$(e,`colMetric${t}`),a=$(e,`nameColMetric${t}`);if(r){const e=v(r.values[n]);void 0!==e&&(1===t?o.colMetric1=e:2===t?o.colMetric2=e:3===t?o.colMetric3=e:4===t&&(o.colMetric4=e))}if(a){const e=y(a.values[n]);void 0!==e&&(1===t?o.nameColMetric1=e:2===t?o.nameColMetric2=e:3===t?o.nameColMetric3=e:4===t&&(o.nameColMetric4=e))}}t.push(o)}}),t):t})(t);return g().createElement("div",{className:i.wrapper},g().createElement(x,{disbursementData:s,collectionData:l}))}).useFieldConfig({disableStandardOptions:Object.values(u.FieldConfigProperty).filter(e=>e!==u.FieldConfigProperty.Links)}).setPanelOptions((e,t)=>{});return c})());
+//# sourceMappingURL=module.js.map

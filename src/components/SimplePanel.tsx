@@ -4,7 +4,7 @@ import { Options as TopologyOptions } from '../config/panelCfg';
 import { css } from '@emotion/css';
 import { useStyles2 } from '@grafana/ui';
 import { MainPanel } from './MainPanel';
-import { transformData } from '../utils/dataUtils';
+import { transformDisbursementData, transformCollectionData } from '../utils/dataUtils';
 import { PanelDataErrorView } from '@grafana/runtime';
 
 interface Props extends PanelProps<TopologyOptions> { }
@@ -36,11 +36,12 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height, fie
     return <PanelDataErrorView fieldConfig={fieldConfig} panelId={id} data={data} needsStringField />;
   }
 
-  const rows = transformData(data);
+  const disbursementData = transformDisbursementData(data);
+  const collectionData = transformCollectionData(data);
 
   return (
     <div className={styles.wrapper}>
-      <MainPanel rows={rows} />
+      <MainPanel disbursementData={disbursementData} collectionData={collectionData} />
     </div>
   );
 };
