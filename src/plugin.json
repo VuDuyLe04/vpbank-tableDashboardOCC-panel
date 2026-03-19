@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
-  "name": "Quannv3",
-  "id": "vpbank-quannv3-panel",
+  "name": "Table-Dashboard-OCC",
+  "id": "vpbank-tableDashboardOCC-panel",
   "info": {
     "keywords": [
       "panel"
     ],
-    "description": "",
+    "description": "A panel for displaying table data business in the OCC dashboard",
     "author": {
       "name": "VPBank"
     },

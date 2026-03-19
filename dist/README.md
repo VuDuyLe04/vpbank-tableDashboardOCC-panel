@@ -2,7 +2,7 @@
 
 Remove any remaining comments before publishing as these may be displayed on Grafana.com -->
 
-# Quannv3
+# A panel for displaying table data business in the OCC dashboard
 
 <!-- To help maximize the impact of your README and improve usability for users, we propose the following loose structure:
 
