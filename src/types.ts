@@ -1,17 +1,12 @@
 
-export interface RawPanelDisbursementData {
+// Unified row for table rendering (both ELK time-series and structured data)
+export interface TableRow {
   id: string;
   label: string;
-  disMetric1?: number;
-  disMetric2?: number;
-  disMetric3?: number;
-  disMetric4?: number;
-  nameDisMetric1?: string;
-  nameDisMetric2?: string;
-  nameDisMetric3?: string;
-  nameDisMetric4?: string;
+  metrics: { name: string; value: number }[];
 }
 
+// Structured data format (used for Thu hộ / Collection)
 export interface RawPanelCollectionData {
   id: string;
   label: string;

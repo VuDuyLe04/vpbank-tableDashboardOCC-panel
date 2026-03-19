@@ -2,11 +2,11 @@ import React from 'react';
 import { css, keyframes } from '@emotion/css';
 import { useStyles2 } from '@grafana/ui';
 
-import { RawPanelDisbursementData, RawPanelCollectionData } from '../types';
+import { TableRow } from '../types';
 
 interface Props {
-    disbursementData: RawPanelDisbursementData[];
-    collectionData: RawPanelCollectionData[];
+    title: string;
+    rows: TableRow[];
 }
 
 const getStyles = (theme: any) => {
@@ -29,26 +29,20 @@ const getStyles = (theme: any) => {
             height: 100%;
             overflow: auto;
             font-family: "Open Sans", Helvetica, Arial, sans-serif;
-            /* Đồng bộ background với các panel khác */
             background: ${theme.colors.background || '#0f1113'};
             padding: 12px 16px;
             display: flex;
-            flex-direction: row;
-            gap: 32px;
-            /* Responsive: bảng sẽ tự co giãn, không căn giữa */
-            justify-content: flex-start;
+            flex-direction: column;
             align-items: stretch;
             border-radius: 6px;
             border: 1px solid rgba(255,255,255,0.02);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
         `,
         table: css`
-            min-width: 350px;
-            flex: 1 1 0;
+            width: 100%;
             border-collapse: separate;
             border-spacing: 10px;
             color: ${theme.colors.text.primary};
-            /* Use transparent table so wrapper background is continuous */
             background: transparent;
             padding: 0;
             border-radius: 0;
@@ -81,7 +75,7 @@ const getStyles = (theme: any) => {
             font-size: 15px;
             border: none;
             border-bottom: 1px solid rgba(0, 153, 255, 0.1);
-            width: 150px; /* Reduced width as requested */
+            width: 150px;
             min-width: 120px;
             
             animation: ${fadeIn} 0.5s ease-out both;
@@ -122,142 +116,48 @@ const getStyles = (theme: any) => {
             font-family: 'Roboto Mono', monospace;
             
             animation: ${fadeIn} 0.5s ease-out both;
-            /* Stagger animation slightly for columns if desired, but keeping it simple for now */
         `
     };
 };
 
-
-// Giả định rows có dạng: [{ label, disbursementTotal, disbursementIn10m, collectionTotal, collectionIn10m, type }]
-// type: 'disbursement' | 'collection'
-
-
-// Helper để lấy các metric có giá trị và tên cột
-function getDisbursementMetrics(row: RawPanelDisbursementData) {
-    const metrics = [];
-    for (let i = 1; i <= 4; i++) {
-        const value = row[`disMetric${i}` as keyof RawPanelDisbursementData];
-        const name = row[`nameDisMetric${i}` as keyof RawPanelDisbursementData];
-        if (value !== undefined) {
-            metrics.push({
-                value,
-                name: name || `Metric ${i}`
-            });
-        }
-    }
-    return metrics;
-}
-
-function getCollectionMetrics(row: RawPanelCollectionData) {
-    const metrics = [];
-    for (let i = 1; i <= 4; i++) {
-        const value = row[`colMetric${i}` as keyof RawPanelCollectionData];
-        const name = row[`nameColMetric${i}` as keyof RawPanelCollectionData];
-        if (value !== undefined) {
-            metrics.push({
-                value,
-                name: name || `Metric ${i}`
-            });
-        }
-    }
-    return metrics;
-}
-
-export const MainPanel: React.FC<Props> = ({ disbursementData, collectionData }) => {
+export const MainPanel: React.FC<Props> = ({ title, rows }) => {
     const styles = useStyles2(getStyles);
 
-    // Xác định số lượng cột tối đa và tên cột cho mỗi bảng
-    const disMetricNames: string[] = [];
-    for (let i = 1; i <= 4; i++) {
-        // Tìm tên cột đầu tiên có giá trị ở bất kỳ row nào
-        let name = '';
-        for (const row of disbursementData) {
-            const value = row[`disMetric${i}` as keyof RawPanelDisbursementData];
-            const n = row[`nameDisMetric${i}` as keyof RawPanelDisbursementData];
-            if (value !== undefined) {
-                name = n !== undefined ? String(n) : `Metric ${i}`;
-                break;
-            }
-        }
-        if (name) disMetricNames.push(name);
-    }
+    // Determine metric column names from first row (all rows should have same structure)
+    const metricNames: string[] = rows.length > 0
+        ? rows[0].metrics.map(m => m.name)
+        : [];
 
-    const colMetricNames: string[] = [];
-    for (let i = 1; i <= 4; i++) {
-        let name = '';
-        for (const row of collectionData) {
-            const value = row[`colMetric${i}` as keyof RawPanelCollectionData];
-            const n = row[`nameColMetric${i}` as keyof RawPanelCollectionData];
-            if (value !== undefined) {
-                name = n !== undefined ? String(n) : `Metric ${i}`;
-                break;
-            }
-        }
-        if (name) colMetricNames.push(name);
-    }
-
-    // Nếu không có dữ liệu
-    if ((!disbursementData || disbursementData.length === 0) && (!collectionData || collectionData.length === 0)) {
+    if (rows.length === 0) {
         return <div>No data</div>;
     }
 
     return (
         <div className={styles.wrapper}>
-            {/* Bảng Chi hộ */}
             <table className={styles.table}>
                 <thead>
                     <tr>
                         <th className={styles.th} style={{ width: '150px' }}></th>
-                        <th className={styles.thGroup} colSpan={disMetricNames.length}>CHI HỘ</th>
+                        {title && (
+                            <th className={styles.thGroup} colSpan={metricNames.length}>{title}</th>
+                        )}
                     </tr>
                     <tr>
                         <th className={styles.th}></th>
-                        {disMetricNames.map((name, idx) => (
+                        {metricNames.map((name, idx) => (
                             <th className={styles.th} key={idx}>{name}</th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {disbursementData.map((row, rowIdx) => {
-                        const metrics = getDisbursementMetrics(row);
-                        return (
-                            <tr key={row.id || rowIdx}>
-                                <td className={styles.tdLabel} style={{ animationDelay: `${rowIdx * 0.1}s` }}>{row.label}</td>
-                                {metrics.map((m, colIdx) => (
-                                    <td className={styles.tdNum} key={colIdx} style={{ animationDelay: `${rowIdx * 0.1 + (colIdx + 1) * 0.1}s` }}>{m.value}</td>
-                                ))}
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-
-            {/* Bảng Thu hộ */}
-            <table className={styles.table}>
-                <thead>
-                    <tr>
-                        <th className={styles.th} style={{ width: '150px' }}></th>
-                        <th className={styles.thGroup} colSpan={colMetricNames.length}>THU HỘ</th>
-                    </tr>
-                    <tr>
-                        <th className={styles.th}></th>
-                        {colMetricNames.map((name, idx) => (
-                            <th className={styles.th} key={idx}>{name}</th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
-                    {collectionData.map((row, rowIdx) => {
-                        const metrics = getCollectionMetrics(row);
-                        return (
-                            <tr key={row.id || rowIdx}>
-                                <td className={styles.tdLabel} style={{ animationDelay: `${rowIdx * 0.1}s` }}>{row.label}</td>
-                                {metrics.map((m, colIdx) => (
-                                    <td className={styles.tdNum} key={colIdx} style={{ animationDelay: `${rowIdx * 0.1 + (colIdx + 1) * 0.1}s` }}>{m.value}</td>
-                                ))}
-                            </tr>
-                        );
-                    })}
+                    {rows.map((row, rowIdx) => (
+                        <tr key={row.id || rowIdx}>
+                            <td className={styles.tdLabel} style={{ animationDelay: `${rowIdx * 0.1}s` }}>{row.label}</td>
+                            {row.metrics.map((m, colIdx) => (
+                                <td className={styles.tdNum} key={colIdx} style={{ animationDelay: `${rowIdx * 0.1 + (colIdx + 1) * 0.1}s` }}>{m.value}</td>
+                            ))}
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
